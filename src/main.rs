@@ -42,7 +42,7 @@ fn setup(mut commands: Commands, meshes: Res<assets::Meshes>, colors: Res<assets
         for y in -10..10 {
             commands.spawn((
                 Transform::from_translation(Vec3::new(x as f32 * 100.0, y as f32 * 100.0, -1.0)),
-                Text2d(String::from(format!("{}, {}", x, y))),
+                Text2d(format!("{}, {}", x, y)),
             ));
         }
     }

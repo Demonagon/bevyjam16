@@ -116,7 +116,7 @@ pub fn update_force_emitters(
 
             let strength = distance_factor * -force.value;
 
-            let mut impulses = impulses.map(|x| *x).unwrap_or_default();
+            let mut impulses = impulses.copied().unwrap_or_default();
             impulses.apply_impulse((position - entity_position).clamp_length(strength, strength));
 
             commands.entity(*entity).insert(impulses);
